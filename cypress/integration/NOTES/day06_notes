@@ -1,0 +1,61 @@
+Day06
+----------------
+****Scripts
+npm run ......=> used to run test scripts that is inside the package.json
+for example, to run login test:
+./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/day01_login_test.js
+
+-- Run all test cases:
+./node_modules/.bin/cypress run
+let's create a new script to run all test cases
+Steps:
+1. create a new script for running All test cases
+package.json>script Add test as following
+"test": "./node_modules/.bin/cypress run",
+
+Then run : 
+npm run test
+
+Now this is the same as :
+./node_modules/.bin/cypress run
+
+2. running headed node_modules
+./node_modules/.bin/cypress run --headed
+
+shortcut ==> Add below in Scripts
+" test-headed":"./node_modules/.bin/cypress run --headed"
+
+Then Run :
+npm run test-headed
+
+3. running headed mode on Chrome
+./node_modules/.bin/cypress run --headed --browser=Chrome
+
+Add script:
+"test-chrome":"./node_modules/.bin/cypress run --headed --browser=Chrome"
+
+4. running headed mode on firefox
+./node_modules/.bin/cypress run --headed --browser=firefox
+
+5. running codes on the dashboard
+./node_modules/.bin/cypress run --record --key 4dc52bff-ef04-41f8-92ed-bde4f5d2bd31
+
+Run script:
+"test-dashboard":"./node_modules/.bin/cypress run --record --key 4dc52bff-ef04-41f8-92ed-bde4f5d2bd31"
+
+Then Run:
+npm test-dashboard
+
+===========================
+
+*** rerun failed scenarios
+https://docs.cypress.io/guides/test-retries
+
+ADD Below in cypress.json file:
+"retries":{
+          "runMode":2,
+          "openMode":0
+      }
+
+
+
